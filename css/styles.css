@@ -790,23 +790,30 @@ body {
   border: 1px solid #eeeeee;
   flex-basis: calc((100% - 60px) / 3);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ 
 }
 
-.tumb-portfolio::before {
+.box {
   display: flex;
-  content: "";
+  position: absolute;
+  overflow: hidden;
+  width: 370px;
+  height: 294px;
+}
+
+.overlays {
+  display: flex;
   position: absolute;
   width: 370px;
   height: 294px;
   background-color: rgba(33, 150, 243, 0.9);
   opacity: 0;
-  transform: translateY(100%);
+   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   
-}
+} 
 
-.web-item:hover .tumb-portfolio::before,
- .web-item:focus.tumb-portfolio::before {
+.thumb:hover .overlays {
   opacity: 1;
   transform: translateY(0);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -824,14 +831,15 @@ top: 63px;
 left: 24px;
 bottom: 63px;
 right: 24px;
+/* opacity: 0; */
+  /* transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); */
   font-weight: 400;
     font-size: 18px;
     line-height: 1.5;
     letter-spacing: 0.03em;
     color: #FFFFFF;
-    opacity: 0;
-      transform: translateY(100%);
-      transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .web-item:hover .port-text,
@@ -841,8 +849,12 @@ right: 24px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .sides {
+  position: relative;
   text-decoration: none;
 }
+
+
+
 
 .text-work {
   padding: 19px 24px 19px 24px;
@@ -881,6 +893,7 @@ right: 24px;
   background-color: rgba(0, 0, 0, 0.102);
   width: 100%;
   height: 100%;
+  z-index: 2;
   
 }
 
